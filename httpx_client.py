@@ -15,6 +15,6 @@ client = httpx.Client(
     headers={"Authorization": f"Bearer {user_response_data['token']['accessToken']}"},
     timeout=100,
 )
-get_user_response = client.get("http://localhost:8000/api/v1/users/me")
+get_user_response = client.get("/api/v1/users/me")
 get_user_response_data = get_user_response.json()
 print("Get user data:", get_user_response_data)

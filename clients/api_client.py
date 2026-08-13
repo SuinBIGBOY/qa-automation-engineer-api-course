@@ -1,6 +1,5 @@
 from httpx import Client, URL, QueryParams, Response
 from typing import Any
-
 from httpx._types import RequestData, RequestFiles
 
 
@@ -24,9 +23,9 @@ class APIClient:
     def post(
             self,
             url: URL | str,
-            json: Any | None,
-            data: RequestData | None,
-            files: RequestFiles | None
+            json: Any | None = None,
+            data: RequestData | None = None,
+            files: RequestFiles | None = None
     ) -> Response:
         """
         Выполняет POST-запрос.
