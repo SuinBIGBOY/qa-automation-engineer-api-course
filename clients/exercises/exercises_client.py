@@ -2,7 +2,7 @@ from clients.api_client import APIClient
 from httpx import Response
 from typing import TypedDict
 
-from clients.private_http_builder import AuthenticationUserDict, get_private_http_client
+from clients.private_http_builder import AuthenticationUserSchema, get_private_http_client
 
 
 
@@ -131,7 +131,7 @@ class ExercisesClient(APIClient):
         return self.delete(f"api/v1/exercise/{exercise_id}")
 
 
-def get_exercises_client(user: AuthenticationUserDict) -> ExercisesClient:
+def get_exercises_client(user: AuthenticationUserSchema) -> ExercisesClient:
     """
     Функция создаёт экземпляр ExercisesClient с уже настроенным HTTP-клиентом.
     :return: Готовый к использованию ExercisesClient.
