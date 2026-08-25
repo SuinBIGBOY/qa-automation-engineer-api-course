@@ -5,10 +5,11 @@ from clients.users.users_schema import CreateUserRequestSchema
 from tools.assertions.authentication import assert_login_response
 from tools.assertions.base import assert_status_code
 from http import HTTPStatus
-
+import pytest
 from tools.assertions.schema import validate_json_schema
 
-
+@pytest.mark.authentication
+@pytest.mark.regression
 def test_login():
     public_users_client = get_public_users_client()
     user_data = CreateUserRequestSchema()
