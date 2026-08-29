@@ -38,3 +38,5 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_USERSERVICE']._serialized_start=107
   _globals['_USERSERVICE']._serialized_end=190
 # @@protoc_insertion_point(module_scope)
+class GetUserRequest:
+    pass
