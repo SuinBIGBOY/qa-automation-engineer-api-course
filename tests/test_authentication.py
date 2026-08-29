@@ -19,4 +19,3 @@ def test_login(function_user: UserFixture, authentication_client: Authentication
 
     validate_json_schema(instance=response.json(), schema=response_data.model_json_schema())
 
-
