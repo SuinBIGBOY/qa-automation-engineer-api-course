@@ -1,4 +1,3 @@
-from clients.authentication.authentication_client import get_authentication_client, AuthenticationClient
 import pytest
 
 from clients.private_http_builder import AuthenticationUserSchema
@@ -23,11 +22,6 @@ class UserFixture(BaseModel):
     @property
     def password(self) -> str:
         return self.request.password
-
-
-@pytest.fixture
-def authentication_client() -> AuthenticationClient:
-    return get_authentication_client()
 
 
 @pytest.fixture
