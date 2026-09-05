@@ -30,6 +30,13 @@ class GetCoursesQuerySchema(BaseModel):
     model_config = ConfigDict(alias_generator=to_camel, populate_by_name=True)
     user_id: str
 
+class GetCoursesResponseSchema(BaseModel):
+    """
+    Описание структуры ответа на получение списка курсов.
+    """
+    courses: list[CourseSchema]
+
+
 class CreateCourseRequestSchema(BaseModel):
     """
     Описание структуры запроса на создание курса.
@@ -53,3 +60,17 @@ class UpdateCourseRequestSchema(BaseModel):
     min_score: int | None = Field(default_factory=fake.min_score)
     description: str | None = Field(default_factory=fake.text)
     estimated_time: str | None = Field(default_factory=fake.estimated_time)
+
+class UpdateCourseResponseSchema(BaseModel):
+    """
+    Описание структуры ответа обновления курса.
+    """
+    course: CourseSchema
+
+
+
+
+
+
+
+
