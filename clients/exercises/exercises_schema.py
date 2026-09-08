@@ -2,7 +2,7 @@ from pydantic import BaseModel, ConfigDict, Field
 from pydantic.alias_generators import to_camel
 from tools.fakers import fake
 
-class ExerciseSchema(BaseModel):
+class ExercisesSchema(BaseModel):
     """
     описание структуры для Exercise
     """
@@ -20,13 +20,13 @@ class GetExerciseResponseSchema(BaseModel):
     """
     структура ответа для ExerciseClient
     """
-    exercises: ExerciseSchema
+    exercise: ExercisesSchema
 
 class GetExercisesResponseSchema(BaseModel):
     """
     Описание структуры ответа на получение списка заданий.
     """
-    exercises: list[ExerciseSchema]
+    exercises: list[ExercisesSchema]
 
 class GetExercisesQuerySchema(BaseModel):
     """
@@ -52,7 +52,7 @@ class CreateExerciseResponseSchema(BaseModel):
     """
     Описание структуры ответа создания задания.
     """
-    exercise: ExerciseSchema
+    exercise: ExercisesSchema
 
 class UpdateExerciseRequestSchema(BaseModel):
     """
@@ -68,6 +68,6 @@ class UpdateExerciseRequestSchema(BaseModel):
 
 class UpdateExerciseResponseSchema(BaseModel):
     """
-    Описание структуры ответа обновления задания.
+    Описание структуры ответа обновления задания.S
     """
-    exercise: ExerciseSchema
+    exercise: ExercisesSchema

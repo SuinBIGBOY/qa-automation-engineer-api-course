@@ -63,7 +63,7 @@ class ExercisesClient(APIClient):
         :param exercise_id: Идентификатор задания.
         :return: Ответ от сервера в виде объекта httpx.Response
         """
-        return self.delete(f"api/v1/exercise/{exercise_id}")
+        return self.delete(f"api/v1/exercises/{exercise_id}")
 
 
 def get_exercises_client(user: AuthenticationUserSchema) -> ExercisesClient:

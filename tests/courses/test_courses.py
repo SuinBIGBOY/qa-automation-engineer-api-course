@@ -4,7 +4,7 @@ from clients.courses.courses_schema import UpdateCourseRequestSchema, UpdateCour
     GetCoursesResponseSchema, CreateCourseRequestSchema, CreateCourseResponseSchema
 import pytest
 
-from clients.users.private_users_client import PrivateUsersClient
+
 from fixtures.courses import CourseFixture
 from fixtures.files import FileFixture
 from fixtures.users import UserFixture
