@@ -1,3 +1,6 @@
+from tools.allure.epics import AllureEpic
+from tools.allure.features import AllureFeature
+from tools.allure.stories import AllureStory
 from fixtures.users import UserFixture
 from clients.authentication.authentication_client import AuthenticationClient
 from clients.authentication.authentication_schema import LoginRequestSchema, LoginResponseSchema
@@ -6,10 +9,23 @@ from tools.assertions.base import assert_status_code
 from http import HTTPStatus
 import pytest
 from tools.assertions.schema import validate_json_schema
+import allure
+from tools.allure.tags import AllureTag
+from allure_commons.types import Severity
+
 
 @pytest.mark.authentication
 @pytest.mark.regression
+@allure.epic(AllureEpic.LMS)
+@allure.tag(AllureTag.REGRESSION, AllureTag.AUTHENTICATION)
+@allure.feature(AllureFeature.AUTHENTICATION)
+@allure.parent_suite(AllureEpic.LMS)
+@allure.suite(AllureFeature.AUTHENTICATION)
 class TestAuthentication:
+    @allure.title("Login with correct email and password")
+    @allure.story(AllureStory.LOGIN)
+    @allure.severity(Severity.BLOCKER)
+    @allure.sub_suite(AllureStory.LOGIN)
     def test_login(self, function_user: UserFixture, authentication_client: AuthenticationClient):
         request = LoginRequestSchema(email=function_user.email, password=function_user.password)
         response = authentication_client.login_api(request)
