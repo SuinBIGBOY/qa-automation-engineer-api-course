@@ -1,16 +1,16 @@
-from tools.allure.epics import AllureEpic
-from tools.allure.features import AllureFeature
-from tools.allure.stories import AllureStory
+from tools.allure_tools.epics import AllureEpic
+from tools.allure_tools.features import AllureFeature
+from tools.allure_tools.stories import AllureStory
 from fixtures.users import UserFixture
 from clients.authentication.authentication_client import AuthenticationClient
 from clients.authentication.authentication_schema import LoginRequestSchema, LoginResponseSchema
-from tools.assertions.authentication import assert_login_response
-from tools.assertions.base import assert_status_code
-from http import HTTPStatus
+from  tools.assertions.authentication import assert_login_response
+from  tools.assertions.base import assert_status_code
+from http import HTTPStatus 
 import pytest
-from tools.assertions.schema import validate_json_schema
+from  tools.assertions.schema import validate_json_schema
 import allure
-from tools.allure.tags import AllureTag
+from tools.allure_tools.tags import AllureTag
 from allure_commons.types import Severity
 
 

@@ -1,4 +1,4 @@
-from http import HTTPStatus
+from http import HTTPStatus 
 import pytest
 from clients.errors_schema import InternalErrorResponseSchema
 from clients.exercises.exercises_client import ExercisesClient
@@ -7,15 +7,15 @@ from clients.exercises.exercises_schema import CreateExerciseRequestSchema, Crea
     GetExercisesResponseSchema
 from fixtures.courses import CourseFixture
 from fixtures.exercises import ExerciseFixture
-from tools.assertions.base import assert_status_code
-from tools.assertions.exercises import assert_create_exercise_response, assert_get_exercise_response, \
+from  tools.assertions.base import assert_status_code
+from  tools.assertions.exercises import assert_create_exercise_response, assert_get_exercise_response, \
     assert_exercise_not_found_response, assert_get_exercises_response
-from tools.assertions.schema import validate_json_schema
+from  tools.assertions.schema import validate_json_schema
 import allure
-from tools.allure.tags import AllureTag
-from tools.allure.epics import AllureEpic
-from tools.allure.features import AllureFeature
-from tools.allure.stories import AllureStory
+from tools.allure_tools.tags import AllureTag
+from tools.allure_tools.epics import AllureEpic
+from tools.allure_tools.features import AllureFeature
+from tools.allure_tools.stories import AllureStory
 from allure_commons.types import Severity
 
 @pytest.mark.exercises

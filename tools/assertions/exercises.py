@@ -2,8 +2,8 @@ from clients.errors_schema import InternalErrorResponseSchema
 from clients.exercises.exercises_schema import CreateExerciseRequestSchema, CreateExerciseResponseSchema, \
     ExercisesSchema, GetExerciseResponseSchema, UpdateExerciseRequestSchema, UpdateExerciseResponseSchema, \
     GetExercisesResponseSchema
-from tools.assertions.base import assert_equal, assert_length
-from tools.assertions.errors import assert_internal_error_response
+from  tools.assertions.base import assert_equal, assert_length
+from  tools.assertions.errors import assert_internal_error_response
 import allure
 
 @allure.step("Check create exercise response")

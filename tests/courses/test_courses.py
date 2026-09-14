@@ -1,4 +1,4 @@
-from http import HTTPStatus
+from http import HTTPStatus 
 from clients.courses.courses_client import CoursesClient
 from clients.courses.courses_schema import UpdateCourseRequestSchema, UpdateCourseResponseSchema, GetCoursesQuerySchema, \
     GetCoursesResponseSchema, CreateCourseRequestSchema, CreateCourseResponseSchema
@@ -6,15 +6,15 @@ import pytest
 from fixtures.courses import CourseFixture
 from fixtures.files import FileFixture
 from fixtures.users import UserFixture
-from tools.assertions.base import assert_status_code
-from tools.assertions.courses import assert_update_course_response, assert_get_courses_response, \
+from  tools.assertions.base import assert_status_code
+from  tools.assertions.courses import assert_update_course_response, assert_get_courses_response, \
     assert_create_course_response
-from tools.assertions.schema import validate_json_schema
+from  tools.assertions.schema import validate_json_schema
 import allure
-from tools.allure.tags import AllureTag
-from tools.allure.epics import AllureEpic
-from tools.allure.features import AllureFeature
-from tools.allure.stories import AllureStory
+from tools.allure_tools.tags import AllureTag
+from tools.allure_tools.epics import AllureEpic
+from tools.allure_tools.features import AllureFeature
+from tools.allure_tools.stories import AllureStory
 from allure_commons.types import Severity
 
 

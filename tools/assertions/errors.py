@@ -1,5 +1,5 @@
 from clients.errors_schema import ValidationErrorSchema, ValidationErrorResponseSchema, InternalErrorResponseSchema
-from tools.assertions.base import assert_equal, assert_length
+from  tools.assertions.base import assert_equal, assert_length
 import allure
 
 @allure.step("Check validation error")

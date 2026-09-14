@@ -4,16 +4,16 @@ from clients.errors_schema import ValidationErrorResponseSchema, InternalErrorRe
 from clients.files.files_client import FilesClient
 from clients.files.files_schema import CreateFileRequestSchema, CreateFileResponseSchema, GetFileResponseSchema
 from fixtures.files import FileFixture
-from tools.assertions.base import assert_status_code
-from tools.assertions.files import assert_create_file_response, assert_get_file_response, \
+from  tools.assertions.base import assert_status_code
+from  tools.assertions.files import assert_create_file_response, assert_get_file_response, \
     assert_create_file_with_empty_filename_response, assert_create_file_with_empty_directory_response, \
     assert_file_not_found_response, assert_get_file_with_incorrect_file_id_response
-from tools.assertions.schema import validate_json_schema
+from  tools.assertions.schema import validate_json_schema
 import allure
-from tools.allure.tags import AllureTag
-from tools.allure.epics import AllureEpic
-from tools.allure.features import AllureFeature
-from tools.allure.stories import AllureStory
+from tools.allure_tools.tags import AllureTag
+from tools.allure_tools.epics import AllureEpic
+from tools.allure_tools.features import AllureFeature
+from tools.allure_tools.stories import AllureStory
 from allure_commons.types import Severity
 
 

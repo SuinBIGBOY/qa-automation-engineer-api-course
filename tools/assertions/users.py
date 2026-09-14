@@ -1,6 +1,6 @@
 from clients.users.users_schema import CreateUserRequestSchema, CreateUserResponseSchema, UserSchema, \
     GetUserResponseSchema
-from tools.assertions.base import assert_equal
+from  tools.assertions.base import assert_equal
 import allure
 
 
