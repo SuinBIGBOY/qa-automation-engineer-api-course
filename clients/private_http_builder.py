@@ -5,6 +5,7 @@ from pydantic import BaseModel
 from functools import lru_cache
 
 
+
 class AuthenticationUserSchema(BaseModel, frozen=True):
     email: str
     password: str

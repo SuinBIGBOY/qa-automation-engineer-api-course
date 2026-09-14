@@ -22,7 +22,7 @@ from allure_commons.types import Severity
 @allure.epic(AllureEpic.LMS)
 @allure.feature(AllureFeature.USERS)
 @allure.parent_suite(AllureEpic.LMS)
-@allure.suite(AllureFeature.AllureFeature.USERS)
+@allure.suite(AllureFeature.USERS)
 class TestUsers:
     @pytest.mark.parametrize("email", ["mail.ru", "gmail.com", "example.com"])
     @allure.title("Create User")
