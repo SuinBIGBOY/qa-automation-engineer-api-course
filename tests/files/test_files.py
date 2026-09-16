@@ -15,6 +15,7 @@ from tools.allure_tools.epics import AllureEpic
 from tools.allure_tools.features import AllureFeature
 from tools.allure_tools.stories import AllureStory
 from allure_commons.types import Severity
+from config_for_test import settings
 
 
 @pytest.mark.files
@@ -31,7 +32,7 @@ class TestFiles:
     @allure.severity(Severity.BLOCKER)
     @allure.sub_suite(AllureStory.CREATE_ENTITY)
     def test_create_file(self, files_client: FilesClient):
-        request = CreateFileRequestSchema(upload_file="./testdata/files/image.png")
+        request = CreateFileRequestSchema(upload_file=settings.test_data.image_png_file)
         response = files_client.create_file_api(request)
         assert_status_code(response.status_code, HTTPStatus.OK)
 
@@ -63,7 +64,7 @@ class TestFiles:
     def test_create_file_with_empty_filename(self, files_client: FilesClient):
         request = CreateFileRequestSchema(
             filename="",
-            upload_file="./testdata/files/image.png")
+            upload_file=settings.test_data.image_png_file)
         response = files_client.create_file_api(request)
         assert_status_code(response.status_code, HTTPStatus.UNPROCESSABLE_ENTITY)
 
@@ -81,7 +82,7 @@ class TestFiles:
     def test_create_file_with_empty_directory(self, files_client: FilesClient):
         request = CreateFileRequestSchema(
             directory="",
-            upload_file="./testdata/files/image.png")
+            upload_file=settings.test_data.image_png_file)
         response = files_client.create_file_api(request)
 
         assert_status_code(response.status_code, HTTPStatus.UNPROCESSABLE_ENTITY)

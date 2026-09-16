@@ -24,9 +24,8 @@ class FilesClient(APIClient):
         :param request: модель с filename, directory, upload_file.
         :return: Ответ от сервера в виде объекта httpx.Response
         """
-        with open(request.upload_file, "rb") as file_bytes:
-            files = {"upload_file": file_bytes}
-            return self.post(
+        files = {"upload_file": request.upload_file.read_bytes()}
+        return self.post(
                 "/api/v1/files",
                 data=request.model_dump(by_alias=True, exclude={"upload_file"}),
                 files=files,

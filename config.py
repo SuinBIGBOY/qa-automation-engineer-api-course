@@ -1,8 +1,6 @@
 from typing import Self
-
 from pydantic import DirectoryPath, HttpUrl
 from pydantic_settings import BaseSettings, SettingsConfigDict
-
 
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(
@@ -11,7 +9,6 @@ class Settings(BaseSettings):
         env_file_encoding='utf-8',
         env_nested_delimiter='.',
     )
-
     app_host: HttpUrl
 
     database_url: str
