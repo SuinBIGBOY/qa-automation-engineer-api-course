@@ -35,7 +35,7 @@ class CoursesClient(APIClient):
         previewFileId, createdByUserId.
         :return: Ответ от сервера в виде объекта httpx.Response
         """
-        return self.post(f"/api/v1/courses", json=request.model_dump(by_alias=True))
+        return self.post("/api/v1/courses", json=request.model_dump(by_alias=True))
 
     def create_course(self, request: CreateCourseRequestSchema) -> CreateCourseResponseSchema:
         response = self.create_course_api(request)

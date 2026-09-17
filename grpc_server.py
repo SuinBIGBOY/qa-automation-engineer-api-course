@@ -1,5 +1,3 @@
-from email import message
-
 import grpc
 from concurrent import futures
 import user_service_pb2

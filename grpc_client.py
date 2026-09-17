@@ -1,5 +1,3 @@
-from urllib import response
-
 import grpc
 import user_service_pb2
 import user_service_pb2_grpc
