@@ -164,3 +164,7 @@ cython_debug/
 local.db
 .idea
 storage
+
+# Allure
+allure-results
+allure-report
